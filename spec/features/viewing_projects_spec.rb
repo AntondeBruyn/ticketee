@@ -8,4 +8,3 @@ RSpec.feature "Viewing projects" do
    expect(page.current_url).to eql(project_url(project))
   end
 end
-   
