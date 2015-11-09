@@ -10,7 +10,7 @@ RSpec.feature "Editing Projects" do
   end
 
   scenario "Updating a project" do
-    fill_in "Name", with: "Sublime Text 3 beta"
+    fill_in "Name", with: "Sublime Text 3"
     click_button "Update Project"
 
     expect(page).to have_content("Project has been updated.")

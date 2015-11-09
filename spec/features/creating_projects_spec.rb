@@ -17,6 +17,7 @@ RSpec.feature "Creating Projects" do
    project = Project.find_by(name: "Sublime Text 3")
    expect(page.current_url).to eql(project_url(project))
 
+save_and_open_page
    title = "Sublime Text 3 - Projects - Ticketee"
    expect(page).to have_title(title)
  end
