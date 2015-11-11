@@ -9,3 +9,13 @@
 
   <%= simple_format(@ticket.description) %>
 </div>
+
+ <div class="page-header">
+    <h2><%= @ticket.title %></h2>
+
+    <ul class="actions">
+      <li><%= link_to "Edit Ticket", [:edit, @project, @ticket],
+        class: "edit" %></li>
+    </ul>
+</div>
+        
