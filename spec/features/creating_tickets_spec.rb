@@ -10,7 +10,7 @@ RSpec.feature "Creating Tickets" do
   end
 
   scenario "with valid attributes" do
-    fill_in "Title", with: "Non-standards compliance"
+    fill_in "Title", with: "non-standards compliance"
     fill_in "Description", with: "My pages are ugly!"
     click_button "Create Ticket"
 
@@ -26,7 +26,7 @@ RSpec.feature "Creating Tickets" do
   end
 
   scenario "with an invalid description" do
-    fill_in "Title", with: "Non-standards compliance"
+    fill_in "Title", with: "non-standards compliance"
     fill_in "Description", with: "It sucks"
     click_button "Create Ticket"
 
@@ -34,3 +34,4 @@ RSpec.feature "Creating Tickets" do
     expect(page).to have_content("Description is too short")
   end
 end
+icke
