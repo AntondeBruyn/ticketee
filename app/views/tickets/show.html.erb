@@ -5,20 +5,19 @@
 
   <div class="page-header">
     <h2><%= @ticket.title %></h2>
+      <p id="author">
+        Created by <%= @ticket.author.email %>, <%= time_ago_in_words(@ticket.created_at) %> ago
+      </p>
   </div>
 
   <%= simple_format(@ticket.description) %>
 </div>
 
- <div class="page-header">
-    <h2><%= @ticket.title %></h2>
-
-    <ul class="actions">
+   <ul class="actions">
       <li><%= link_to "Edit Ticket", [:edit, @project, @ticket],
         class: "edit" %></li>
       <li><%= link_to "Delete Ticket", [@project, @ticket], method: :delete,
         data: { confirm: "Are you sure you want to delete this ticket?"},
         class: "delete" %></li>
-    </ul>
+   </ul>
 </div>
-        
