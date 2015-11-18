@@ -1,10 +1,12 @@
 <div class="page-header">
 <h1>New Project</h1>
 
+<% admins_only do %>
  <ul class="actions">
-  <%= link_to "New Project", new_admin_project_path,
-      class: "new" %>
-  </ul>
+   <li><%= link_to "New Project", new_admin_project_path,
+      class: "new" %></li>
+ </ul>
+<% end %>
 </div>
 
 <div id="projects">
