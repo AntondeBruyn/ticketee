@@ -2,7 +2,8 @@
 <h1>New Project</h1>
 
  <ul class="actions">
-   <%= link_to "New Project", new_project_path, class: "new" %>
+  <%= link_to "New Project", new_admin_project_path,
+      class: "new" %>
   </ul>
 </div>
 
@@ -12,5 +13,5 @@
     <p><%= project.description %></p>
   <% end %>
 </div>
-<%= link_to new_project_path do %>
+<%= link_to new_admin_project_path do %>
 <% end %>
