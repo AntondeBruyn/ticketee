@@ -18,7 +18,11 @@ RSpec.feature "hidden links" do
 end
 
   context "regular users" do
-    before { login_as(user) }
+    before do
+      login_as(user)
+      assign_role!(user, :viewer, project)
+    end
+
     scenario "cannot see the New Project link" do
       visit "/"
       expect(page).not_to have_link "New Project"

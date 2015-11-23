@@ -2,6 +2,7 @@ require "rails_helper"
 
 RSpec.feature "Creating Tickets" do
   let(:user) { FactoryGirl.create(:user) }
+
   before do
     login_as(user)
     FactoryGirl.create(:project, name: "Internet Explorer")

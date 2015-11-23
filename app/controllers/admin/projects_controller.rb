@@ -15,6 +15,10 @@ class Admin::ProjectsController < Admin::BaseController
     end
   end
 
+  def show
+    authorize @project, :show?
+  end
+
   def destroy
     @project = Project.find(params[:id])
     @project.destroy

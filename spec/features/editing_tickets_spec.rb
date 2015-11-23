@@ -9,6 +9,7 @@ RSpec.feature "Editing tickets" do
 
   before do
     login_as(user)
+    assign_role!(user, :viewer, project)
     visit project_ticket_path(project, ticket)
     click_link "Edit Ticket"
   end
