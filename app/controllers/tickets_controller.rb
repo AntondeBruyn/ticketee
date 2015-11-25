@@ -19,6 +19,10 @@ class TicketsController < ApplicationController
     end
   end
 
+  def show
+    authorize @ticket, :show?
+  end
+
   def edit
   end
 
