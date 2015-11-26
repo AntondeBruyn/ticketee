@@ -15,6 +15,10 @@ class TicketPolicy < ApplicationPolicy
       (record.project.has_editor?(user) && record.author == user)
   end
 
+  def destroy?
+    user.try(:admin?) || record.project.has_manager?(user)
+  end
+
   class Scope < Scope
     def resolve
       scope
