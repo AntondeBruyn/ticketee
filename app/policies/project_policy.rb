@@ -1,4 +1,13 @@
 class ProjectPolicy < ApplicationPolicy
+
+  def show?
+    user.try(:admin?) || record.has_member?(user)
+  end
+
+  def update?
+    user.try(:admin?) || record.has_manager?(user)
+  end
+
   class Scope < Scope
     def resolve
       return scope.none if user.nil?
@@ -7,14 +16,4 @@ class ProjectPolicy < ApplicationPolicy
       scope.joins(:roles).where(roles: {user_id: user})
     end
   end
-
-    def show?
-      user.try(:admin?) || record.roles.exists?(user_id: user)
-    end
-
-    def update?
-      user.try(:admin?) || record.roles.exists?(user_id: user,
-        role: 'manager')
-    end
-  end
-        
+end
