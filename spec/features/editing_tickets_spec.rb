@@ -5,7 +5,6 @@ RSpec.feature "Editing tickets" do
   let(:user) { FactoryGirl.create(:user) }
   let!(:ticket) do
     FactoryGirl.create(:ticket, project: project, author: user)
-  end
 
   before do
     login_as(user)
@@ -33,4 +32,5 @@ RSpec.feature "Editing tickets" do
 
     expect(page).to have_content("Ticket has not been updated.")
   end
+ end
 end

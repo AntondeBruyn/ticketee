@@ -34,13 +34,11 @@ RSpec.describe TicketPolicy do
       it { should permit_action :show }
       it { should permit_action :create }
       it { should_not permit_action :update }
-      it { should_not permit_action :destroy}
 
       context "when the editor created the ticket" do
         before { ticket.author = user }
-
-        it { should permit_action :update }
       end
+      it { should_not permit_action :destroy }
     end
 
     context "for managers of the project" do

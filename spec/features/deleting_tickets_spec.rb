@@ -5,7 +5,6 @@ RSpec.feature "Deleting tickets" do
   let(:user) { FactoryGirl.create(:user) }
   let!(:ticket) do
     FactoryGirl.create(:ticket, project: project, author: user)
-  end
 
   before do
     login_as(user)
@@ -19,4 +18,5 @@ RSpec.feature "Deleting tickets" do
     expect(page).to have_content("Ticket has been deleted.")
     expect(page.current_url).to eql(project_url(project))
   end
+ end
 end
