@@ -1,7 +1,9 @@
 FactoryGirl.define do
   factory :asset do
-    asset "MyString"
-ticket nil
-  end
+    transient do
+      file "spec/fixtures/speed.txt"
+    end
 
+    asset { File.open file }
+  end
 end
