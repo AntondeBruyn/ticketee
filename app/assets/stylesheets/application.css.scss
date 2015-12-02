@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "admin/users";
+@import "tickets";
 
 a.new, a.edit, a.delete {
   @extend .btn;

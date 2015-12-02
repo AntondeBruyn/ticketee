@@ -5,5 +5,6 @@ class Ticket < ActiveRecord::Base
   validates :description, presence: true, length: { minimum: 10 }
 
   has_many :assets, dependent: :destroy
+  has_many :comments, dependent: :destroy
   accepts_nested_attributes_for :assets, reject_if: :all_blank
 end
