@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :tickets
   end
 
-  resources :assets, only: [:show], path: :files do
+  resources :assets, only: [:show, :new], path: :files do
   end
 
   # You can have the root of your site routed with "root"
