@@ -6,7 +6,7 @@
   <div class="page-header">
     <h2><%= @ticket.title %></h2>
     <p id="author">
-      Created by <%= @ticket.author.email %>, <%= time_ago_in_words(@ticket.created_at) %>
+      Created by <%= @ticket.author.email %>, <%= time_ago_in_words(@ticket.created_at) %> ago
     </p>
   </div>
 
@@ -39,7 +39,7 @@
       <% end %>
     </div>
   <% end %>
-</div>
+
 
 <header>
   <h3>Comments</h3>
@@ -53,6 +53,14 @@
   <% end %>
 </div>
 
-<% if policy(@comment).create? %>
-  <%= render "comments/form", ticket: @ticket, comment: @comment %>
-<% end %>
+  <% if policy(@comment).create? %>
+    <%= render "comments/form", ticket: @ticket, comment: @comment %>
+  <% end %>
+
+  <% if @ticket.state.present? %>
+    <tr>
+      <th>State:</th>
+      <td><%= render @ticket.state %></td>
+    </tr>
+  <% end %>
+</div>

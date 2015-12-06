@@ -10,6 +10,7 @@ RSpec.feature "Users can comment on tickets" do
   before do
     login_as(user)
     assign_role!(user, :manager, project)
+    FactoryGirl.create(:state, name: "Open")
 
     visit "/"
     click_link project.name
@@ -32,5 +33,16 @@ RSpec.feature "Users can comment on tickets" do
 
     expect(page).to have_content("Comment has not been created.")
   end
+
+  scenario "when changing a ticket's state" do
+    click_link ticket.title
+    fill_in "Text", with: "This is a real issue"
+    select "Open", from: "State"
+    click_button "Create Comment"
+
+    expect(page).to have_content("Comment has been created.")
+    within("#ticket .state") do
+      expect(page).to have_content("Open")
+    end
+  end
 end
-  

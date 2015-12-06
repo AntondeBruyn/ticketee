@@ -16,13 +16,13 @@ class CommentsController < ApplicationController
     end
   end
 
-private
+ private
 
-  def set_ticket
-    @ticket = Ticket.find(params[:ticket_id])
-  end
+   def set_ticket
+     @ticket = Ticket.find(params[:ticket_id])
+   end
 
-  def comment_params
-    params.require(:comment).permit(:text)
-  end
-end
+   def comment_params
+     params.require(:comment).permit(:text, :state_id)
+   end
+ end
