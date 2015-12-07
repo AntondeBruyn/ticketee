@@ -2,5 +2,15 @@ blockquote.comment p {
   font-size: 14px;
 }
 
+.state {
+  @extend .label;
+  font-size: 12px;
+  padding: 0.3em 0.6em;
+}
+
+#tickets li {
+  padding-bottom: 10px;
+}
+
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
