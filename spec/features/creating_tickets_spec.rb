@@ -54,6 +54,7 @@ RSpec.feature "Creating Tickets" do
     click_button "Create Ticket"
 
     expect(page).to have_content("Ticket has been created.")
+    expect(page).to have_content("State: New")
 
     within("#ticket .assets") do
       expect(page).to have_content("speed.txt")

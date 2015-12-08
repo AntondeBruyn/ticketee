@@ -37,15 +37,20 @@ RSpec.feature "Users can comment on tickets" do
   scenario "when changing a ticket's state" do
     click_link ticket.title
     fill_in "Text", with: "This is a real issue"
-    select "Open", from: "State"
+
     click_button "Create Comment"
 
     expect(page).to have_content("Comment has been created.")
-    within("#comments") do
-      expect(page).to have_content("Open")
-    end
+
     within("#comments") do
       expect(page).to have_content("state changed to Open")
     end
+  end
+
+  scenario "cannot change the state without permission" do
+    assign_role!(user, :editor, project)
+
+    click_link ticket.title
+    expect(page).not_to have_select "State"
   end
 end
