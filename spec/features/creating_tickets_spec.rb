@@ -66,7 +66,6 @@ RSpec.feature "Creating Tickets" do
     fill_in "Title", with: "Add documentation for blink tag"
     fill_in "Description", with: "The blink tag has a speed attribute"
     click_button "Create Ticket"
-    save_and_open_page
 
     within("#ticket .assets") do
       expect(page).to have_content("speed.txt")
