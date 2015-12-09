@@ -12,5 +12,22 @@ blockquote.comment p {
   padding-bottom: 10px;
 }
 
+.tag {
+  @extend .state;
+  @extend .label-info;
+  margin-right: 10px;
+
+  a {
+    color: white;
+
+    &.remove {
+      font-family: "FontAwesome";
+      @extend .fa-close;
+      margin-right: 0.5em;
+      text-decoration: none;
+    }
+  }
+}
+
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
