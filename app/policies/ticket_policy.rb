@@ -23,6 +23,10 @@ class TicketPolicy < ApplicationPolicy
     destroy?
   end
 
+  def tag?
+    destroy?
+  end
+
   class Scope < Scope
     def resolve
       scope
