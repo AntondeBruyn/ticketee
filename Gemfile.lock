@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/radar/searcher.git
+  revision: c2975124e11677825481ced9539f16f0cb0640de
+  specs:
+    searcher (0.0.7)
+      activerecord (~> 4.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,7 +43,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.8)
+    addressable (2.4.0)
     arel (6.0.3)
     autoprefixer-rails (6.1.2)
       execjs
@@ -69,6 +76,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    concurrent-ruby (1.0.0)
     database_cleaner (1.4.1)
     debug_inspector (0.0.2)
     devise (3.4.1)
@@ -182,7 +190,8 @@ GEM
       actionpack (~> 4.0)
       activemodel (~> 4.0)
     spring (1.5.0)
-    sprockets (3.4.1)
+    sprockets (3.5.2)
+      concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (2.3.3)
       actionpack (>= 3.0)
@@ -229,6 +238,7 @@ DEPENDENCIES
   rspec-rails (~> 3.1.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  searcher!
   selenium-webdriver (~> 2.45.0)
   simple_form
   spring
